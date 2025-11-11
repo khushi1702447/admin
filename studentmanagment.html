@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student Management Dashboard</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    <div class="d-flex">
+      <!-- Sidebar -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark flex-column align-items-stretch p-3" style="width: 250px; min-height: 100vh;">
+        <a class="navbar-brand mb-3" href="#">🎓 Student Mgmt</a>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item"><a class="nav-link active" href="#students">📋 Students</a></li>
+          <li><a class="nav-link" href="#enrollments">📚 Enrollments</a></li>
+          <li><a class="nav-link" href="#certificates">📜 Certificates</a></li>
+          <li><a class="nav-link" href="#moderation">⚠️ Moderation</a></li>
+        </ul>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="flex-grow-1 p-4">
+        <h2 class="mb-4">Student Management Dashboard</h2>
+
+        <!-- Students Card -->
+        <div id="students" class="card mb-4">
+          <div class="card-header bg-primary text-white">Student Records</div>
+          <div class="card-body">
+            <p class="text-muted">Manage students, track progress, and take actions.</p>
+            <div class="table-responsive">
+              <table class="table table-hover align-middle">
+                <thead class="table-light">
+                  <tr>
+                    <th></th>
+                    <th>Student</th>
+                    <th>Email</th>
+                    <th>Courses</th>
+                    <th>Progress</th>
+                    <th>Status</th>
+                    <th class="text-end">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="studentsTable"><!-- JS injects --></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion Section -->
+        <div class="accordion" id="studentAccordion">
+          <!-- Enrollments -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEnrollments">
+                📚 View Enrollments
+              </button>
+            </h2>
+            <div id="collapseEnrollments" class="accordion-collapse collapse show" data-bs-parent="#studentAccordion">
+              <div class="accordion-body">
+                <form>
+                  <label for="studentSelect" class="form-label">Select Student</label>
+                  <select id="studentSelect" class="form-select mb-3" onchange="showStudentEnrollments()"></select>
+                </form>
+                <div id="enrollmentList"><p class="text-muted">No student selected.</p></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certificates -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCertificates">
+                📜 Certificates
+              </button>
+            </h2>
+            <div id="collapseCertificates" class="accordion-collapse collapse" data-bs-parent="#studentAccordion">
+              <div class="accordion-body">
+                <button class="btn btn-success mb-2" onclick="issueCertificateForSelected()">Issue Certificate (Selected)</button>
+                <p class="text-muted">Certificates will auto-generate and open in a printable window.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Moderation -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseModeration">
+                ⚠️ Moderation
+              </button>
+            </h2>
+            <div id="collapseModeration" class="accordion-collapse collapse" data-bs-parent="#studentAccordion">
+              <div class="accordion-body">
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="checkbox" id="selectAll" onchange="toggleSelectAll(this)">
+                  <label class="form-check-label" for="selectAll">Select all students</label>
+                </div>
+                <div class="d-flex gap-2">
+                  <button class="btn btn-warning" onclick="bulkSuspend()">Suspend Selected</button>
+                  <button class="btn btn-danger" onclick="bulkBan()">Ban Selected</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+
+    <!-- Student Progress Modal -->
+    <div class="modal fade" id="progressModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header"><h5 class="modal-title">Student Progress</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body" id="progressModalBody"></div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button class="btn btn-success" onclick="issueCertificateFromModal()">Issue Certificate</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Same JS logic from your version (students, renderStudents, progress, actions…)
+      // Reuse functions you already wrote, just keep IDs the same
+    </script>
+  </body>
+</html>

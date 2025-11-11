@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LMS Dashboard</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  </head>
+  <body>
+   <div class="container-fluid p-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="h3 mb-0">Dashboard</h1>
+
+    <!-- Buttons in one row -->
+    <div class="d-flex gap-2">
+      <button class="btn btn-outline-secondary btn-sm">Export</button>
+      <button class="btn btn-primary btn-sm">Add</button>
+
+      <div class="dropdown">
+        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Dropdown
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="studentmanagment.html">studentmanagment</a></li>
+          <li><a class="dropdown-item" href="quizmanagment.html">quizmanagment</a></li>
+          <li><a class="dropdown-item" href="instroctormanagment.html">instroctormanagment</a></li>
+          <li><a class="dropdown-item" href="reportmanagment.html">reportmanagment</a></li>
+          <li><a class="dropdown-item" href="usermanagment.html">usermanagment</a></li>
+          <li><a class="dropdown-item" href="contentmanagment.html">contentmanagment</a></li>
+          <li><a class="dropdown-item" href="coursemanagment.html">coursemanagment</a></li>
+          <li><a class="dropdown-item" href="setting managment.html">setting</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <!-- Overview cards -->
+      <div class="row g-3 mb-4">
+        <div class="col-6 col-sm-3">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <h6 class="mb-1">Students</h6>
+                  <h3 class="mb-0">4,125</h3>
+                </div>
+                <div class="text-end">
+                  <small class="text-success">+4.2%</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-sm-3">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <h6 class="mb-1">Teachers</h6>
+                  <h3 class="mb-0">210</h3>
+                </div>
+                <div class="text-end">
+                  <small class="text-muted">stable</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-sm-3">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <h6 class="mb-1">Courses</h6>
+                  <h3 class="mb-0">56</h3>
+                </div>
+                <div class="text-end">
+                  <small class="text-primary">+2 new</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-sm-3">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <h6 class="mb-1">Enrollments</h6>
+                  <h3 class="mb-0">8,940</h3>
+                </div>
+                <div class="text-end">
+                  <small class="text-success">+1.1%</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick stats -->
+      <div class="row g-3 mb-4">
+        <div class="col-md-3 col-6">
+          <div class="card p-3 shadow-sm">
+            <div class="small">Active Users</div>
+            <div class="h4">1,102</div>
+            <div class="small text-muted">Last 24 hours</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="card p-3 shadow-sm">
+            <div class="small">Revenue</div>
+            <div class="h4">₹ 1,24,800</div>
+            <div class="small text-muted">This month</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="card p-3 shadow-sm">
+            <div class="small">Course Completion</div>
+            <div class="h4">72%</div>
+            <div class="small text-muted">Average</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="card p-3 shadow-sm">
+            <div class="small">Avg. Session</div>
+            <div class="h4">23m</div>
+            <div class="small text-muted">Per user</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts and tables -->
+      <div class="row g-3">
+        <div class="col-lg-8">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="mb-0">Course Activity (Last 30 days)</h5>
+                <div class="small text-muted">Updated just now</div>
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="card shadow-sm mt-3">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="mb-0">Daily Logins</h5>
+                <div class="small text-muted">Last 14 days</div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card shadow-sm mb-3">
+            <div class="card-body">
+              <h5 class="h6">Top Courses</h5>
+              <ul class="list-group list-group-flush mt-3">
+                <li class="list-group-item d-flex justify-content-between align-items-center">Intro to Python <span class="badge bg-primary rounded-pill">1,240</span></li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">Web Development <span class="badge bg-primary rounded-pill">980</span></li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">Data Science <span class="badge bg-primary rounded-pill">860</span></li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">UI/UX Basics <span class="badge bg-primary rounded-pill">610</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="h6 mb-3">Completion Rate</h5>
+            
+              <div class="text-center small text-muted mt-2">72% overall</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent enrollments table -->
+      <div class="card shadow-sm mt-4">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="mb-0">Recent Enrollments</h5>
+            <div class="small text-muted">Showing latest 7</div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table table-hover align-middle">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Student</th>
+                  <th>Course</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Aman Verma</td>
+                  <td>Intro to Python</td>
+                  <td>2025-09-20</td>
+                  <td><span class="badge bg-success">Active</span></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Sana Patel</td>
+                  <td>Web Development</td>
+                  <td>2025-09-19</td>
+                  <td><span class="badge bg-success">Active</span></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Rohit Singh</td>
+                  <td>Data Science</td>
+                  <td>2025-09-18</td>
+                  <td><span class="badge bg-warning text-dark">Pending</span></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Deepa Rao</td>
+                  <td>UI/UX Basics</td>
+                  <td>2025-09-17</td>
+                  <td><span class="badge bg-success">Active</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      // Sample data for charts (replace with real data from your backend)
+      const days30 = Array.from({length: 30}, (_, i) => `Day ${i+1}`);
+      const random = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+      // Course activity (line)
+      const ctxCourse = document.getElementById('courseActivityChart');
+      new Chart(ctxCourse, {
+        type: 'line',
+        data: {
+          labels: days30,
+          datasets: [
+            { label: 'Video Views', data: days30.map(() => random(50, 400)), tension: 0.3, fill: true },
+            { label: 'Assignments Submitted', data: days30.map(() => random(5, 80)), tension: 0.3 }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { position: 'top' } },
+          scales: { x: { display: true }, y: { beginAtZero: true } }
+        }
+      });
+
+      // Daily logins (bar)
+      const ctxLogins = document.getElementById('dailyLoginsChart');
+      new Chart(ctxLogins, {
+        type: 'bar',
+        data: {
+          labels: Array.from({length: 14}, (_, i) => `D-${13-i}`),
+          datasets: [{ label: 'Logins', data: Array.from({length: 14}, () => random(40, 250)) }]
+        },
+        options: { responsive: true, scales: { y: { beginAtZero: true } } }
+      });
+
+      // Completion donut
+      const ctxDough = document.getElementById('completionDoughnut');
+      new Chart(ctxDough, {
+        type: 'doughnut',
+        data: {
+          labels: ['Completed', 'Incomplete'],
+          datasets: [{ data: [72, 28] }]
+        },
+        options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
+      });
+    </script>
+  </body>
+</html>
